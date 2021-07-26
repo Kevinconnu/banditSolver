@@ -16,18 +16,27 @@ The program functions by connecting via SSH to level 0 of bandit, using the pass
 All input and direction of the program comes from json format config files, files must be named for the level they pertain to aka 'bandit0' contains the log in info and commands to complete level 0, etc. The first 4 fields must contain the address, port, username and password information.
 
 ```bash
+    {
     "address": "bandit.labs.overthewire.org",
     "port": "2220",
     "username": "bandit0",
     "password": "bandit0"
+    }
 ```
 NOTE: Only the level 0 config file (aka 'bandit0.cfg') will actually contain a password, since finding each level's password is what this program will do. In all consecutive levels' config files, the password value should remain blank.
 
-After the 4 SSH info fields will come the commands. Remember the config document is in json formatting, so each command must follow the same formatting rules. Commands must be named for the order they should be executed, ie 'cmd1', 'cmd2' etc.
+After the 4 SSH info fields will come the commands. Remember the config document is in JSON formatting, so each command must follow the same formatting rules. Commands must be named for the order they should be executed, ie 'cmd1', 'cmd2' etc..
+
+```bash
+    {
+    "cmd1": "cd someDirectory",
+    "cmd2": "cat someText.txt"
+    }
+```
 
 ### Output
-Any passwords the program obtains will be saved to a new file called 'banditPasswords.txt' in the cwd. This file is referenced by the program when it logs on to the next level.
+###### The password document
+Any passwords the program obtains will be saved to a new file called 'banditPasswords.txt' in the cwd. The new line that is printed to the password document when the program obtains a new password will then be used as the SSH password on the programs next loop ie when it connects to the next level.
 
 ## Disclaimer
-
-I am a noob, and this is the largest thing I've built to date without a step by step guide - Please let me know how I can be more effecient and effective!
+I am a noob, and this is the largest thing I've built without a step by step guide - Please let me know how I can be more effecient and effective!
