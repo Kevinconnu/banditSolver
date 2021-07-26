@@ -37,7 +37,7 @@ _In the above example, the 'cat' command would be executed first, which may not 
 
 ### Output
 ###### The password document
-Any passwords the program obtains will be saved to a new file called 'banditPasswords.txt' in the cwd. The new line that is printed to the password document when the program obtains a new password will then be used as the SSH password on the programs next loop ie when it connects to the next level.
+Any passwords the program obtains will be saved to a new file called 'banditPasswords.txt' in the cwd. If this file already exists, it will be overwritten. The program will print a new line to the password document when the program obtains a new password. The password contained in that line will then be used as the SSH password on the programs next loop, when it connects to the next level.
 
 ## Disclaimer
 I am a noob, and this is the largest thing I've built without a step by step guide - Please let me know how I can be more effecient and effective! This repository contains the config files necessary to get through the first 6 levels... Don't use this if you haven't done them yourself. Ain't no point cheating a training excercise :)
