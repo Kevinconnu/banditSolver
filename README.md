@@ -39,5 +39,17 @@ _In the above example, the 'cat' command would be executed first, which may not 
 ###### The password document
 Any passwords the program obtains will be saved to a new file called 'banditPasswords.txt' in the cwd. If this file already exists, it will be overwritten. The program will print a new line to the password document when the program obtains a new password. The password contained in that line will then be used as the SSH password on the programs next loop, when it connects to the next level.
 
+## How do I run it... on Ubuntu?
+This is for the other noobie's like me :). If you've come this far, you've probably already installed pwntools- if not, back up to the dependencies section and do that. 
+
+Next you've gotta make sure you have 'banditSolver.py' in the same folder as your 'bandit0.cfg' through 'bandit6.cfg' files. Then open a terminal in that location.
+
+Run the following commands:
+```bash
+    $ chmod +x banditSolver.py
+    $ python banditSolver.py
+```
+That's it!!
+
 ## Disclaimer
-I am a noob, and this is the largest thing I've built without a step by step guide - Please let me know how I can be more effecient and effective! This repository contains the config files necessary to get through the first 6 levels... Don't use this if you haven't done them yourself. Ain't no point cheating a training excercise :)
+I am a noob, and this is the largest thing I've built without a step by step guide - Please let me know how I can be more effecient and effective! This repository contains the config files necessary to get through the first 6 levels... Don't use this if you haven't done them yourself yet. Ain't no point cheating a training exercise :)
