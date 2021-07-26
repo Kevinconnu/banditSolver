@@ -1,5 +1,5 @@
 # banditSolver
-banditSolver.py is a basic python 3 program made to solve levels of the [Bandit Labs CTF](https://overthewire.org/wargames/bandit/) using a json config file as input.
+banditSolver.py is a basic python 3 program made to solve levels of the [Bandit Labs CTF](https://overthewire.org/wargames/bandit/) using a JSON config file as input.
 
 ## Dependencies
 -pwntools (use [pip](https://pip.pypa.io/en/stable/) to install)
@@ -13,7 +13,7 @@ The program functions by connecting via SSH to level 0 of bandit, using the pass
 
 ### Input
 ###### The config document
-All input and direction of the program comes from JSON format config files. Files must be named for the level they pertain to (aka 'bandit0.cfg' contains the log in info and commands to complete level 0, 'bandit1.cfg' would be the next file required, and so on). The first 4 fields of the config file must contain the SSH address, port, username and password information:
+All input and direction of the program comes from JSON format config files. Files must be named for the level they pertain to (aka 'bandit0.cfg' contains the log in info and commands to complete level 0, 'bandit1.cfg' would be the next file required, and so on). Four fields must contain the SSH address, port, username and password information:
 
 ```bash
     {
@@ -25,14 +25,15 @@ All input and direction of the program comes from JSON format config files. File
 ```
 NOTE: Only the level 0 config file (aka 'bandit0.cfg') will actually contain a password, since finding each level's password is what this program will do. In all consecutive levels' config files, the password value should remain blank.
 
-After the four SSH info fields will come the commands. Remember, the config document is in JSON formatting, so each command must follow the same formatting rules. Commands must be named for the order they should be executed, ie 'cmd1', 'cmd2' etc.. Example:
+Command fields are much the same. Remember, the config document is in JSON formatting, so each command must follow the same formatting rules. Commands must be named for the order they should be executed, ie 'cmd1', 'cmd2' etc.. Example:
 
 ```bash
     {
-    "cmd1": "cd someDirectory",
-    "cmd2": "cat someText.txt"
+    "cmd2": "cd someDirectory",
+    "cmd1": "cat someText.txt"
     }
 ```
+_In the above example, the 'cat' command would be executed first, which may not be what was intended..._
 
 ### Output
 ###### The password document
