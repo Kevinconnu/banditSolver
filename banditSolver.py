@@ -41,7 +41,6 @@ for i in range(len(configList)):
     print('Sending commands...')
     cmdsLeft = (len(cfgFile) - 4)
     for cmds in range(cmdsLeft):
-        #print(f'...command {
         currentCommand = cfgFile[f'cmd{cmds+1}']
         currentCommand = bytes(currentCommand, 'ascii')
         sh.sendline(currentCommand)
